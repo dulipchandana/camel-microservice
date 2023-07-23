@@ -16,7 +16,6 @@ public class AggregatorRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("activemq:my-activemq-queue")
-
                 .aggregate(header(CORRELATION_ID), correlationAggregationStrategy)
                 .completionSize(10)
                 .log(LoggingLevel.INFO,"${header."+CORRELATION_ID+"}${body}")

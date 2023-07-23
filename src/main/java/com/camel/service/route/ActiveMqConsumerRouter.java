@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class ActiveMqConsumerRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
-        from("activemq:my-activemq-queue")
+        from("activemq:my-activemq-queue").id("my-activemq-queue")
                 .to("log:received-message-from-active-mq");
 
     }

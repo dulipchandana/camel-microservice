@@ -13,15 +13,13 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 //@Component
 public class ActiveMqSedaRouter extends RouteBuilder {
 
-    private final CurrentTimeService currentTimeService;
-
     private final SimpleLoggingProcessor simpleLoggingProcessor;
 
     @Override
     public void configure() throws Exception {
         //consume from ActiveMqSenderRouter
-        from("activemq:my-activemq-queue")
-                .wireTap("direct:audit-queue")
+        from("activemq:my-activemq-queue").id("my-activemq-queue")
+                .wireTap("direct:audit-queue").id("audit-route")
                 .to("seda:weightLifter?multipleConsumers=true");
 
         from("seda:weightLifter?multipleConsumers=true")
