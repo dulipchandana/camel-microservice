@@ -4,12 +4,11 @@ import com.camel.service.strategy.CorrelationAggregationStrategy;
 import lombok.AllArgsConstructor;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
-import org.springframework.stereotype.Service;
 
 import static com.camel.service.process.SimpleLoggingProcessor.CORRELATION_ID;
 //this work with ActiveMqSenderRouter
 @AllArgsConstructor
-@Service
+//@Service
 public class AggregatorRouter extends RouteBuilder {
 
     private final CorrelationAggregationStrategy correlationAggregationStrategy;

@@ -4,12 +4,9 @@ import com.camel.service.process.SimpleLoggingProcessor;
 import com.camel.service.service.CurrentTimeService;
 import lombok.AllArgsConstructor;
 import org.apache.camel.builder.RouteBuilder;
-import org.springframework.stereotype.Service;
-
-import java.time.LocalDateTime;
 
 @AllArgsConstructor
-@Service
+//@Service
 public class ActiveMqSenderRouter extends RouteBuilder {
 
     private final CurrentTimeService currentTimeService;
