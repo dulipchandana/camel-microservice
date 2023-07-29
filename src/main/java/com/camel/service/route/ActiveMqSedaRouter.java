@@ -5,12 +5,14 @@ import com.camel.service.service.CurrentTimeService;
 import lombok.AllArgsConstructor;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.builder.RouteBuilder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
 @AllArgsConstructor
-//@Component
+@Component
+@ConditionalOnProperty(name="route.camel.seda-handler.enabled", havingValue = "true")
 public class ActiveMqSedaRouter extends RouteBuilder {
 
     private final SimpleLoggingProcessor simpleLoggingProcessor;
