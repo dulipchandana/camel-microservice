@@ -25,6 +25,11 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.apache.camel:camel-test-spring-junit5:3.20.6'
+	//test container dependents
+	testImplementation group: 'org.testcontainers', name: 'testcontainers', version: '1.18.3'
+	testImplementation group: 'org.testcontainers', name: 'junit-jupiter', version: '1.18.3'
+	testImplementation group: 'org.apache.activemq', name: 'activemq-client', version: '5.16.3'
+
 }
 
 tasks.named('test') {
