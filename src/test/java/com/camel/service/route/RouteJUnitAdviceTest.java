@@ -8,10 +8,10 @@ import org.apache.camel.model.RouteDefinition;
 import org.apache.camel.test.junit5.CamelTestSupport;
 import org.apache.camel.test.spring.junit5.MockEndpoints;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mock;
 import org.mockito.Spy;
 
 import static org.apache.camel.builder.AdviceWith.adviceWith;
+
 
 @MockEndpoints
 public class RouteJUnitAdviceTest extends CamelTestSupport {

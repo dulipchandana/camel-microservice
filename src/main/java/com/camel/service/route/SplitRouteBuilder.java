@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @ConditionalOnProperty(name="route.camel.split-handler.enabled", havingValue = "true")
-public class SplitRouteBuilder  extends RouteBuilder {
+public class  SplitRouteBuilder  extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("direct:start").id("start")
