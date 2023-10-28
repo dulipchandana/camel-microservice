@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 @AllArgsConstructor
 public class ActiveMqConsumerRouter extends RouteBuilder {
     @Override
