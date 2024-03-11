@@ -23,7 +23,7 @@ public class ActiveMqSenderRouter extends RouteBuilder {
                 .setHeader(BEAN_METHOD_NAME,()->"getCurrentTime")
                 .bean(currentTimeService)
                 .process(simpleLoggingProcessor)
-                //.log("${body}")
+                .log("${id}")
                 .to("activemq:my-activemq-queue");
     }
 }

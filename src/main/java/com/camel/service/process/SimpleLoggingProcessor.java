@@ -19,11 +19,14 @@ public class SimpleLoggingProcessor implements Processor {
 
     public final static String CORRELATION_ID = "correlationId";
 
+    public final static String ID = "id";
+
     @Override
     public void process(Exchange exchange) throws Exception {
         String body = exchange.getMessage().getBody(String.class);
         Message message = exchange.getMessage();
         message.setHeader(CORRELATION_ID, (new Random()).nextInt(10));
+        message.setHeader(ID, exchange.getMessage().getMessageId());
         message.setBody("After Processor-"+body);
         exchange.setMessage(message);
 
